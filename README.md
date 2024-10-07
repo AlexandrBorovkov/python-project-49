@@ -4,3 +4,7 @@
 <a href="https://codeclimate.com/github/AlexandrBorovkov/python-project-49/maintainability">
     <img src="https://api.codeclimate.com/v1/badges/26fa5b8507991f84546f/maintainability" />
 </a>
+
+<a href="https://asciinema.org/a/mH8KcVcs8fbdIg2dMyXljHC8L">
+    Пример работы "brain-even"
+</a>
