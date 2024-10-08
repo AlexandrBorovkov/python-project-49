@@ -6,7 +6,7 @@ def start_game():
     print("Welcome to the Brain Games!")
     username = prompt.string("May I have your name? ")
     print(f"Hello, {username}!")
-    print('What number is missing in the progression?')
+    print('Answer "yes" if given number is prime. Otherwise answer "no".')
     return username
 
 
@@ -19,19 +19,20 @@ def output_wrong_answer(user_response, right_answer, username):
     )
 
 
+def check_number(num):
+    result = len([x for x in range(1, num // 2 + 1) if num % x == 0])
+    if result == 1:
+        return "yes"
+    return "no"
+
+
 def answer_processing(username):
     counter = 3
     while counter > 0:
-        len_list = random.randint(5, 10)
-        start = random.randint(11, 99)
-        step = random.randint(2, 9)
-        stop = (len_list - 1) * step + start + 1
-        index = random.randint(0, len_list - 1)
-        result_list = [str(x) for x in range(start, stop, step)]
-        right_answer = result_list[index]
-        result_list[index] = ".."
-        print(f"Question: {" ".join(result_list)}")
+        number = random.randint(1, 99)
+        print(f"Question: {number}")
         user_response = prompt.string("Your answer: ")
+        right_answer = check_number(number)
         if user_response == right_answer:
             print("Correct!")
             counter -= 1
