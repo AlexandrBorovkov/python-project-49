@@ -60,7 +60,18 @@ files = [
     {file = "pyflakes-3.2.0.tar.gz", hash = "sha256:1c61603ff154621fb2a9172037d84dca3500def8c8b630657d1701f026f8af3f"},
 ]
 
+[[package]]
+name = "simpleeval"
+version = "1.0.0"
+description = "A simple, safe single expression evaluator library."
+optional = false
+python-versions = ">=3.9"
+files = [
+    {file = "simpleeval-1.0.0-py3-none-any.whl", hash = "sha256:704817f39879b42d81777f02e2dd28dde45c7f9c3fd84cea0d6dbde85c3efcff"},
+    {file = "simpleeval-1.0.0.tar.gz", hash = "sha256:f3d259deeb751d34c63e56747bab384efad63a2dbdb4f130281c42279788ac3c"},
+]
+
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "d031f0d1ba46f6573195a3e8ff2037c88cacc0eff286796717fccb54aef5bfeb"
+content-hash = "669b8d727d637f19606412c05c1ed91873c54183b748160d50b113409bda6f81"
