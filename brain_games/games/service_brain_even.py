@@ -1,31 +1,22 @@
-import prompt
 import random
+import prompt
+from brain_games.games.core import greeting, cycle
+
+
+def create_question():
+    number = random.randint(1, 999)
+    return number
+
+
+def get_user_response():
+    return prompt.string("Your answer: ")
+
+
+def get_right_answer(question):
+    return ["yes", "no"][question % 2]
 
 
 def start_game():
-    print("Welcome to the Brain Games!")
-    username = prompt.string("May I have your name? ")
-    print(f"Hello, {username}!")
-    print('Answer "yes" if the number is even, otherwise answer "no".')
-    return username
-
-
-def answer_processing(username):
-    counter = 3
-    while counter > 0:
-        number = random.randint(1, 999)
-        print(f"Question: {number}")
-        user_response = prompt.string("Your answer: ")
-        right_answer = ["yes", "no"][number % 2]
-        if user_response == right_answer:
-            print("Correct!")
-            counter -= 1
-        else:
-            print(
-                f"'{user_response}' is wrong answer ;(.",
-                f"Correct answer was '{right_answer}'.",
-                f"\nLet's try again, {username}!",
-                sep=" "
-            )
-            return
-    print(f"Congratulations, {username}!")
+    INDEX_LIST_QUESTIONS = 1
+    username = greeting(INDEX_LIST_QUESTIONS)
+    cycle(username, create_question, get_user_response, get_right_answer)

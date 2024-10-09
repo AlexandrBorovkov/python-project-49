@@ -2,7 +2,10 @@ import prompt
 
 
 def greeting(index):
-    list_questions = ["What is the result of the expression?"]
+    list_questions = [
+        'What is the result of the expression?',
+        'Answer "yes" if the number is even, otherwise answer "no".'
+    ]
     print("Welcome to the Brain Games!")
     username = prompt.string("May I have your name? ")
     print(f"Hello, {username}!")
@@ -19,7 +22,6 @@ def output_wrong_answer(user_response, right_answer, username):
     )
 
 
-
 def cycle(username, create_question, get_user_response, get_right_answer):
     counter = 3
     while counter > 0:
@@ -27,7 +29,6 @@ def cycle(username, create_question, get_user_response, get_right_answer):
         print(f"Question: {question}")
         user_response = get_user_response()
         right_answer = get_right_answer(question)
-        
         if user_response == right_answer:
             print("Correct!")
             counter -= 1
