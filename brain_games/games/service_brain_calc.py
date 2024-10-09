@@ -1,45 +1,33 @@
-import prompt
 import random
-
+import prompt
 from simpleeval import simple_eval
+from brain_games.games.core import greeting, cycle
+
+
+
+INDEX_LIST_QUESTIONS = 0
+
+
+def create_question():
+    number_1 = random.randint(1, 99)
+    number_2 = random.randint(1, 99)
+    char = random.choice(["+", "-", "*"])
+    return f"{number_1} {char} {number_2}"
+
+
+def get_user_response():
+    return prompt.integer("Your answer: ")
+
+
+def get_right_answer(question):
+    return simple_eval(question)
 
 
 def start_game():
-    print("Welcome to the Brain Games!")
-    username = prompt.string("May I have your name? ")
-    print(f"Hello, {username}!")
-    print("What is the result of the expression?")
-    return username
+    username = greeting(INDEX_LIST_QUESTIONS)
+    cycle(username, create_question, get_user_response, get_right_answer)
 
 
-def output_wrong_answer(user_response, right_answer, username):
-    print(
-        f"'{user_response}' is wrong answer ;(.",
-        f"Correct answer was '{right_answer}'.",
-        f"\nLet's try again, {username}!",
-        sep=" "
-    )
 
 
-def answer_processing(username):
-    counter = 3
-    while counter > 0:
-        number_1 = random.randint(1, 99)
-        number_2 = random.randint(1, 99)
-        char = random.choice(["+", "-", "*"])
-        expression = f"{number_1} {char} {number_2}"
-        print(f"Question: {expression}")
-        user_response = prompt.string("Your answer: ")
-        right_answer = simple_eval(expression)
-        try:
-            user_response = int(user_response)
-        except ValueError:
-            output_wrong_answer(user_response, right_answer, username)
-            return
-        if user_response == right_answer:
-            print("Correct!")
-            counter -= 1
-        else:
-            output_wrong_answer(user_response, right_answer, username)
-            return
-    print(f"Congratulations, {username}!")
+
