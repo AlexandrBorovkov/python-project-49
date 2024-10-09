@@ -4,7 +4,8 @@ import prompt
 def greeting(index):
     list_questions = [
         'What is the result of the expression?',
-        'Answer "yes" if the number is even, otherwise answer "no".'
+        'Answer "yes" if the number is even, otherwise answer "no".',
+        'Find the greatest common divisor of given numbers.'
     ]
     print("Welcome to the Brain Games!")
     username = prompt.string("May I have your name? ")
