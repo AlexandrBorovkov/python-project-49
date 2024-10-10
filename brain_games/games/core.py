@@ -6,7 +6,8 @@ def greeting(index):
         'What is the result of the expression?',
         'Answer "yes" if the number is even, otherwise answer "no".',
         'Find the greatest common divisor of given numbers.',
-        'Answer "yes" if given number is prime. Otherwise answer "no".'
+        'Answer "yes" if given number is prime. Otherwise answer "no".',
+        'What number is missing in the progression?'
     ]
     print("Welcome to the Brain Games!")
     username = prompt.string("May I have your name? ")
