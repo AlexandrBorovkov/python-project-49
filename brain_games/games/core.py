@@ -25,6 +25,14 @@ def output_wrong_answer(user_response, right_answer, username):
     )
 
 
+def get_user_response_integer():
+    return prompt.integer("Your answer: ")
+
+
+def get_user_response_string():
+    return prompt.string("Your answer: ")
+
+
 def cycle(username, create_question, get_user_response, get_right_answer):
     counter = 3
     while counter > 0:
