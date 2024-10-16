@@ -1,13 +1,13 @@
-import random
 from brain_games.core import greeting, cycle, get_user_response_integer
+from brain_games.utils import get_random_number
 
 
 def create_question():
-    len_list = random.randint(5, 10)
-    start = random.randint(11, 99)
-    step = random.randint(2, 9)
+    len_list = get_random_number(5, 10)
+    start = get_random_number(11, 99)
+    step = get_random_number(2, 9)
     stop = (len_list - 1) * step + start + 1
-    index = random.randint(0, len_list - 1)
+    index = get_random_number(0, len_list - 1)
     result_list = [str(x) for x in range(start, stop, step)]
     result_list[index] = ".."
     return " ".join(result_list)

@@ -1,12 +1,13 @@
-import random
+from random import choice
 from simpleeval import simple_eval
 from brain_games.core import greeting, cycle, get_user_response_integer
+from brain_games.utils import get_random_number
 
 
 def create_question():
-    number_1 = random.randint(1, 99)
-    number_2 = random.randint(1, 99)
-    char = random.choice(["+", "-", "*"])
+    number_1 = get_random_number(1, 99)
+    number_2 = get_random_number(1, 99)
+    char = choice(["+", "-", "*"])
     return f"{number_1} {char} {number_2}"
 
 

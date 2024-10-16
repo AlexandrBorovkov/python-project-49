@@ -1,9 +1,9 @@
-import random
 from brain_games.core import greeting, cycle, get_user_response_string
+from brain_games.utils import get_random_number
 
 
 def create_question():
-    number = random.randint(1, 999)
+    number = get_random_number(1, 999)
     return number
 
 

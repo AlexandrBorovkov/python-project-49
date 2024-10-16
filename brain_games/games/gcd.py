@@ -1,11 +1,11 @@
-import random
 import math
 from brain_games.core import greeting, cycle, get_user_response_integer
+from brain_games.utils import get_random_number
 
 
 def create_question():
-    number_1 = random.randint(1, 99)
-    number_2 = random.randint(1, 99)
+    number_1 = get_random_number(1, 99)
+    number_2 = get_random_number(1, 99)
     return f"{number_1} {number_2}"
 
 
