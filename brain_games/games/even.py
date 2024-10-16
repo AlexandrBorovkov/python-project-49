@@ -1,5 +1,5 @@
 import random
-from brain_games.games.core import greeting, cycle, get_user_response_string
+from brain_games.core import greeting, cycle, get_user_response_string
 
 
 def create_question():

@@ -1,6 +1,6 @@
 import random
 import math
-from brain_games.games.core import greeting, cycle, get_user_response_integer
+from brain_games.core import greeting, cycle, get_user_response_integer
 
 
 def create_question():
