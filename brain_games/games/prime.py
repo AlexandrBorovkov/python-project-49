@@ -3,12 +3,13 @@ from brain_games.utils import get_random_number
 
 
 def create_question():
-    number = get_random_number(1, 999)
+    number = get_random_number(1, 99)
     return number
 
 
 def get_right_answer(question):
-    result = len([x for x in range(1, question // 2 + 1) if question % x == 0])
+    result = len([x for x in range(1, int(question ** 0.5 + 1))
+                  if question % x == 0])
     if result == 1:
         return "yes"
     return "no"
