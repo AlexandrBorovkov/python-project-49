@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-from brain_games.games.service_brain_even import start_game
+from brain_games.games.even import start_game
 
 
 def main():
