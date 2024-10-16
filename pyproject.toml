@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = ""
+description = "A series of mathematical games"
 authors = ["Alexandr Borovkov <mr.borovkov.prm@gmail.com>"]
 readme = "README.md"
 packages = [
@@ -13,14 +13,6 @@ python = "^3.12"
 prompt = "^0.4.1"
 simpleeval = "^1.0.0"
 
-[tool.poetry.scripts]
-brain-games = "brain_games.scripts.brain_games:main"
-brain-even = "brain_games.scripts.brain_even:main"
-brain-calc = "brain_games.scripts.brain_calc:main"
-brain-gcd = "brain_games.scripts.brain_gcd:main"
-brain-progression = "brain_games.scripts.brain_progression:main"
-brain-prime = "brain_games.scripts.brain_prime:main"
-
 [tool.poetry.group.dev.dependencies]
 flake8 = "^7.1.1"
 
@@ -28,4 +20,10 @@ flake8 = "^7.1.1"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-
+[tool.poetry.scripts]
+brain-games = "brain_games.scripts.brain_games:main"
+brain-even = "brain_games.scripts.brain_even:main"
+brain-calc = "brain_games.scripts.brain_calc:main"
+brain-gcd = "brain_games.scripts.brain_gcd:main"
+brain-progression = "brain_games.scripts.brain_progression:main"
+brain-prime = "brain_games.scripts.brain_prime:main"
