@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.12
+#!/usr/bin/env python3
 
 
 from brain_games.games.service_brain_progression import start_game
