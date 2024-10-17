@@ -1,5 +1,4 @@
 from random import choice
-from simpleeval import simple_eval
 from brain_games.core import greeting, cycle, get_user_response_integer
 from brain_games.utils import get_random_number
 
@@ -12,7 +11,7 @@ def create_question():
 
 
 def get_right_answer(question):
-    return simple_eval(question)
+    return eval(question)
 
 
 def start_game():
