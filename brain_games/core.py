@@ -1,18 +1,11 @@
 import prompt
 
 
-def greeting(index):
-    list_questions = [
-        'What is the result of the expression?',
-        'Answer "yes" if the number is even, otherwise answer "no".',
-        'Find the greatest common divisor of given numbers.',
-        'Answer "yes" if given number is prime. Otherwise answer "no".',
-        'What number is missing in the progression?'
-    ]
+def greeting(instruction):
     print("Welcome to the Brain Games!")
     username = prompt.string("May I have your name? ")
     print(f"Hello, {username}!")
-    print(list_questions[index])
+    print(instruction)
     return username
 
 
@@ -33,13 +26,16 @@ def get_user_response_string():
     return prompt.string("Your answer: ")
 
 
-def cycle(username, create_question, get_user_response, get_right_answer):
+def cycle(create_question, instruction):
+    username = greeting(instruction)
     counter = 3
     while counter > 0:
-        question = create_question()
+        question, right_answer = create_question()
         print(f"Question: {question}")
-        user_response = get_user_response()
-        right_answer = get_right_answer(question)
+        if isinstance(right_answer, int):
+            user_response = get_user_response_integer()
+        else:
+            user_response = get_user_response_string()
         if user_response == right_answer:
             print("Correct!")
             counter -= 1
