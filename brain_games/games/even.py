@@ -3,9 +3,13 @@ from brain_games.core import cycle
 from brain_games.utils import get_random_number
 
 
+def get_right_answer(question):
+    return "yes" if question % 2 == 0 else "no"
+
+
 def create_question():
     question = get_random_number(1, 999)
-    right_answer = ["yes", "no"][question % 2]
+    right_answer = get_right_answer(question)
     return question, right_answer
 
 
