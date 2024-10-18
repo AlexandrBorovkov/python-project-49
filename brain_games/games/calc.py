@@ -1,6 +1,6 @@
 from random import choice
 from brain_games.constants import CALC_INSTRUCTION
-from brain_games.core import cycle, get_user_response_integer
+from brain_games.core import cycle
 from brain_games.utils import get_random_number
 
 
