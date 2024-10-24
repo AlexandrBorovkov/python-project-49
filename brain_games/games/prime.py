@@ -3,21 +3,22 @@ from brain_games.core import run_game
 from brain_games.utils import get_random_number
 
 
-def get_right_answer(question):
-    result = len([x for x in range(1, int(question ** 0.5 + 1))
-                  if question % x == 0])
-    if result == 1:
-        return "yes"
-    return "no"
+def is_prime(number):
+    if number < 2:
+        return False
+    for i in range(2, int(number ** 0.5) + 1):
+        if number % i == 0:
+            return False
+    return True
 
 
-def create_question():
-    question = get_random_number(1, 99)
-    right_answer = get_right_answer(question)
-    return question, right_answer
+def get_problem_number_and_answer():
+    problem_num = get_random_number(1, 99)
+    answer = "yes" if is_prime(problem_num) else "no"
+    return problem_num, answer
 
 
 def start_game():
-    run_game(create_question,
+    run_game(get_problem_number_and_answer,
              PRIME_INSTRUCTION
              )
