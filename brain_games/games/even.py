@@ -1,5 +1,5 @@
 from brain_games.constants import EVEN_INSTRUCTION
-from brain_games.core import cycle
+from brain_games.core import run_game
 from brain_games.utils import get_random_number
 
 
@@ -14,6 +14,6 @@ def create_question():
 
 
 def start_game():
-    cycle(create_question,
-          EVEN_INSTRUCTION
-          )
+    run_game(create_question,
+             EVEN_INSTRUCTION
+             )

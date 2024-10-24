@@ -8,10 +8,10 @@ publish:
 	poetry publish --dry-run
 
 package-install:
-	python3.12 -m pip install dist/*.whl
+	python3 -m pip install dist/*.whl
 
 package-reinstall:
-	python3.12 -m pip install --force-reinstall dist/*.whl
+	python3 -m pip install --force-reinstall dist/*.whl
 
 brain-games:
 	poetry run brain-games

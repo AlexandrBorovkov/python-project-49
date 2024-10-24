@@ -1,5 +1,5 @@
 from brain_games.constants import PRIME_INSTRUCTION
-from brain_games.core import cycle
+from brain_games.core import run_game
 from brain_games.utils import get_random_number
 
 
@@ -18,6 +18,6 @@ def create_question():
 
 
 def start_game():
-    cycle(create_question,
-          PRIME_INSTRUCTION
-          )
+    run_game(create_question,
+             PRIME_INSTRUCTION
+             )

@@ -1,5 +1,5 @@
 from brain_games.constants import PROGRESSION_INSTRUCTION
-from brain_games.core import cycle
+from brain_games.core import run_game
 from brain_games.utils import get_random_number
 
 
@@ -11,11 +11,11 @@ def create_question():
     question = " ".join([".." if i == index else str(step * i + start)
                          for i in range(len_list)
                          ])
-    right_answer = step * index + start
+    right_answer = str(step * index + start)
     return question, right_answer
 
 
 def start_game():
-    cycle(create_question,
-          PROGRESSION_INSTRUCTION
-          )
+    run_game(create_question,
+             PROGRESSION_INSTRUCTION
+             )
