@@ -4,15 +4,14 @@ from brain_games.core import run_game
 from brain_games.utils import get_random_number
 
 
-def create_question():
-    number_1 = get_random_number(1, 99)
-    number_2 = get_random_number(1, 99)
-    question = f"{number_1} {number_2}"
-    right_answer = str(math.gcd(number_1, number_2))
-    return question, right_answer
+def get_numbers_to_find_gcd_and_answer():
+    number_1, number_2 = get_random_number(1, 99), get_random_number(1, 99)
+    problem_nums = f"{number_1} {number_2}"
+    answer = str(math.gcd(number_1, number_2))
+    return problem_nums, answer
 
 
 def start_game():
-    run_game(create_question,
+    run_game(get_numbers_to_find_gcd_and_answer,
              GCD_INSTRUCTION
              )
